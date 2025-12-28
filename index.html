@@ -1,79 +1,226 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy - Buck Music Bot</title>
-    <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #f4f4f9;
-        }
-        .container {
-            background: white;
-            padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        h1 { color: #5865F2; border-bottom: 2px solid #eee; padding-bottom: 10px; }
-        h2 { color: #2c3e50; margin-top: 30px; }
-        p { margin-bottom: 15px; }
-        ul { margin-bottom: 15px; }
-        li { margin-bottom: 5px; }
-        footer { margin-top: 50px; text-align: center; font-size: 0.8em; color: #7f8c8d; }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <h1>Privacy Policy</h1>
-        <p><strong>Last Updated: December 27, 2025</strong></p>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Privacy Policy - Buck Bot</title>
+        <style>
+            body {
+                font-family:
+                    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+                    Helvetica, Arial, sans-serif;
+                line-height: 1.6;
+                color: #333;
+                max-width: 800px;
+                margin: 0 auto;
+                padding: 20px;
+                background-color: #f4f4f9;
+            }
+            .container {
+                background: white;
+                padding: 40px;
+                border-radius: 8px;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            }
+            h1 {
+                color: #5865f2;
+                border-bottom: 2px solid #eee;
+                padding-bottom: 10px;
+            }
+            h2 {
+                color: #2c3e50;
+                margin-top: 30px;
+            }
+            p {
+                margin-bottom: 15px;
+            }
+            ul {
+                margin-bottom: 15px;
+            }
+            li {
+                margin-bottom: 5px;
+            }
+            .version {
+                color: #7f8c8d;
+                font-size: 0.9em;
+            }
+            footer {
+                margin-top: 50px;
+                text-align: center;
+                font-size: 0.8em;
+                color: #7f8c8d;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Privacy Policy</h1>
+            <p><strong>Last Updated: December 28, 2025</strong></p>
+            <p class="version">Bot Version: 2.0.0</p>
 
-        <p>This Privacy Policy explains how the Buck Music Bot ("the Bot") handles data within your Discord server.</p>
+            <p>
+                This Privacy Policy explains how the Buck Bot ("the Bot")
+                handles data within your Discord server.
+            </p>
 
-        <h2>1. Data We Collect</h2>
-        <p>We believe in minimal data collection. The Bot only processes the following information to function:</p>
-        <ul>
-            <li><strong>User IDs:</strong> To identify authorized users for specific commands (e.g., the download command).</li>
-            <li><strong>Guild/Channel IDs:</strong> To know where to play music, where to log messages, and where to execute commands.</li>
-            <li><strong>Command Content:</strong> To process your requests (e.g., search queries for music).</li>
-            <li><strong>Message Metadata:</strong> For the message logging feature (if enabled by server admins), we temporarily process message content to generate logs. We do not store these logs on our own external databases.</li>
-        </ul>
+            <h2>1. Data We Collect</h2>
+            <p>
+                We believe in minimal data collection. The Bot only processes
+                the following information to function:
+            </p>
+            <ul>
+                <li>
+                    <strong>User IDs:</strong> To identify users for moderation
+                    actions (warnings, bans, kicks, timeouts), to track
+                    authorized users for restricted commands (e.g., the download
+                    command), and to associate actions with users.
+                </li>
+                <li>
+                    <strong>Guild/Server IDs:</strong> To store server-specific
+                    settings such as log channels, and to manage per-server
+                    music queues.
+                </li>
+                <li>
+                    <strong>Channel IDs:</strong> To know where to play music,
+                    send logs, and execute commands.
+                </li>
+                <li>
+                    <strong>Command Content:</strong> To process your requests
+                    (e.g., search queries for music, moderation reasons).
+                </li>
+                <li>
+                    <strong>Message Metadata:</strong> For the message logging
+                    feature (if enabled by server admins), we temporarily
+                    process message content to generate logs. We do not store
+                    message content on external databases.
+                </li>
+                <li>
+                    <strong>Voice State:</strong> To manage music playback and
+                    track which users are in voice channels.
+                </li>
+            </ul>
 
-        <h2>2. How We Use Data</h2>
-        <p>Your data is used solely for the following purposes:</p>
-        <ul>
-            <li>To facilitate music streaming and downloads from the connected Navidrome server.</li>
-            <li>To provide moderation tools like the `/purge` command.</li>
-            <li>To update the Bot's status with the currently playing track.</li>
-            <li>To provide server activity logs in the designated channel set by your administrators.</li>
-        </ul>
+            <h2>2. Data We Store</h2>
+            <p>
+                The following data is persistently stored in a local database
+                file:
+            </p>
+            <ul>
+                <li>
+                    <strong>Server Settings:</strong> Log channel IDs and other
+                    configuration options set by administrators.
+                </li>
+                <li>
+                    <strong>Warning Records:</strong> When a user is warned, we
+                    store their User ID, the reason, the moderator's ID, and a
+                    timestamp. This data is used for the warning system and
+                    auto-timeout features.
+                </li>
+                <li>
+                    <strong>Authorized Users:</strong> A list of User IDs
+                    authorized to use restricted commands like
+                    <code>/download</code>.
+                </li>
+            </ul>
 
-        <h2>3. Data Storage and Security</h2>
-        <p>Most data processed by the Bot is ephemeral and stored in memory only while the Bot is running. Permanent settings (like log channel IDs) are stored in a local `database.json` file. We do not sell or share your data with third parties.</p>
+            <h2>3. How We Use Data</h2>
+            <p>Your data is used solely for the following purposes:</p>
+            <ul>
+                <li>
+                    To facilitate music streaming, searching, and playback from
+                    the connected Navidrome server.
+                </li>
+                <li>
+                    To provide moderation tools including bans, kicks, timeouts,
+                    warnings, purge, and slowmode.
+                </li>
+                <li>
+                    To enforce automatic actions (e.g., auto-timeout after
+                    reaching warning thresholds).
+                </li>
+                <li>
+                    To update the Bot's status with the currently playing track.
+                </li>
+                <li>
+                    To provide server activity logs in the designated channel
+                    set by your administrators.
+                </li>
+                <li>
+                    To restrict access to certain commands to authorized users
+                    only.
+                </li>
+            </ul>
 
-        <h2>4. Third-Party Services</h2>
-        <p>The Bot interacts with the following third-party services:</p>
-        <ul>
-            <li><strong>Discord:</strong> To deliver our services to your server.</li>
-            <li><strong>Navidrome:</strong> To fetch music and metadata from the private media server.</li>
-            <li><strong>LrcLib:</strong> To fetch song lyrics.</li>
-            <li><strong>Spotify API:</strong> To fetch metadata for music downloads.</li>
-        </ul>
+            <h2>4. Data Retention</h2>
+            <p>
+                Most data processed by the Bot is ephemeral and stored in memory
+                only while the Bot is running (e.g., music queues, current
+                playback state). Persistent data (settings, warnings, authorized
+                users) is stored until manually deleted by a server
+                administrator or the Bot owner.
+            </p>
 
-        <h2>5. Your Rights</h2>
-        <p>Administrators can stop the Bot's data processing at any time by removing the Bot from the server. To request the deletion of any stored configuration data, please contact the Bot owner.</p>
+            <h2>5. Data Security</h2>
+            <p>
+                All persistent data is stored locally on the Bot's host server.
+                We do not sell, share, or transfer your data to third parties.
+                Access to stored data is limited to the Bot owner for
+                maintenance purposes.
+            </p>
 
-        <h2>6. Changes to This Policy</h2>
-        <p>We may update this policy occasionally. Continued use of the Bot after changes constitutes acceptance of the new policy.</p>
+            <h2>6. Third-Party Services</h2>
+            <p>The Bot interacts with the following third-party services:</p>
+            <ul>
+                <li>
+                    <strong>Discord:</strong> To deliver our services to your
+                    server.
+                </li>
+                <li>
+                    <strong>Navidrome:</strong> To fetch music, albums, artists,
+                    playlists, and metadata from your private media server.
+                </li>
+                <li><strong>LrcLib:</strong> To fetch song lyrics.</li>
+                <li>
+                    <strong>Spotify API:</strong> To fetch metadata for music
+                    downloads via SpotiFLAC.
+                </li>
+            </ul>
 
-        <footer>
-            &copy; 2025 Buck Music Bot. All rights reserved.
-        </footer>
-    </div>
-</body>
+            <h2>7. Your Rights</h2>
+            <p>You have the following rights regarding your data:</p>
+            <ul>
+                <li>
+                    <strong>Access:</strong> Server administrators can view
+                    warnings using <code>/warn list</code>.
+                </li>
+                <li>
+                    <strong>Deletion:</strong> Administrators can clear warnings
+                    using <code>/warn clear</code>. To request complete deletion
+                    of all stored data, contact the Bot owner.
+                </li>
+                <li>
+                    <strong>Opt-out:</strong> Administrators can disable logging
+                    features or remove the Bot from the server entirely to stop
+                    all data processing.
+                </li>
+            </ul>
+
+            <h2>8. Children's Privacy</h2>
+            <p>
+                The Bot is not intended for users under the age of 13 (or the
+                minimum age of digital consent in your jurisdiction). We do not
+                knowingly collect data from children.
+            </p>
+
+            <h2>9. Changes to This Policy</h2>
+            <p>
+                We may update this policy occasionally to reflect new features
+                or legal requirements. Continued use of the Bot after changes
+                constitutes acceptance of the new policy. Significant changes
+                will be announced where possible.
+            </p>
+
+            <footer>&copy; 2025 Buck Bot. All rights reserved.</footer>
+        </div>
+    </body>
 </html>
